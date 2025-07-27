@@ -12,6 +12,7 @@
 
 // Define Constants
 #define TRASH_FULL_LEVEL 2 // 2cm
+#define SPEED_OF_SOUND_CM 0.034
 
 
 

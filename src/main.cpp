@@ -12,7 +12,8 @@
 void setup() {
   // lid.begin();
   // sorter.begin();
-  // binLevel.begin();
+  binInit();
+  Serial.begin(119500);
 
 }
 
@@ -24,3 +25,5 @@ void loop() {
   // }
 }
 
+// tone(buzzer, 500); if(binFull)
+// noTone(buzzer);
