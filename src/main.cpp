@@ -12,7 +12,7 @@
 void setup() {
   // lid.begin();
   // sorter.begin();
-  binInit();
+  FLMInit();
   Serial.begin(119500);
 
 }

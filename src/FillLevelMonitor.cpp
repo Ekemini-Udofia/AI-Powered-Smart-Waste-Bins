@@ -1,6 +1,6 @@
 #include "config.hpp"
 
-void binInit()
+void FLMInit()
 {
     pinMode(ULT_FILL_MONITOR_ECHO_PIN, INPUT);
     pinMode(ULT_FILL_MONITOR_TRIG_PIN, OUTPUT);
