@@ -1,0 +1,13 @@
+#ifndef INC_CONFIG_HPP_
+#define INC_CONFIG_HPP_
+
+// Define Pins, constants, and settings
+#define BUZZER_PIN 10
+#define LID_SERVO_PIN 11
+#define SORTER_SERVO_PIN 12
+#define ULT_PROXIMITY_SENSOR_TRIG_PIN 13
+#define ULT_PROXIMITY_SENSOR_ECHO_PIN 14
+#define ULT_FILL_MONITOR_TRIG_PIN 15
+#define ULT_FILL_MONITOR_ECHO_PIN 16
+
+#endif
