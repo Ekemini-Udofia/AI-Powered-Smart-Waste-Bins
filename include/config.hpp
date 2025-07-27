@@ -1,6 +1,8 @@
 #ifndef INC_CONFIG_HPP_
 #define INC_CONFIG_HPP_
 
+#include <Arduino.h>
+
 // Define Pins
 #define BUZZER_PIN 10
 #define LID_SERVO_PIN 11
