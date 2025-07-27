@@ -5,5 +5,3 @@ The **AI-Powered Smart Waste Bin** is an intelligent, touch-free waste disposal 
 Once waste is deposited, advanced image recognition models analyze and classify the item, directing it into the correct compartment: **biodegradable** or **non-biodegradable**. The bin continuously monitors its fill level and alerts users when full, ensuring seamless operation and smarter waste management.
 
 No buttons. No confusion. Just smarter, cleaner living.
-
-©️ Ekemini Udofia 2025
