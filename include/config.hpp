@@ -15,7 +15,7 @@
 // Define Constants
 #define TRASH_FULL_LEVEL 2 // 2cm
 #define SPEED_OF_SOUND_CM 0.034
-
+#define DIST_TO_OPEN_LID 10
 
 
 #endif

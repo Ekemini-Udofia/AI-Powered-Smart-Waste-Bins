@@ -1,16 +1,11 @@
-#include <Arduino.h>
-#include <freertos/FreeRTOS.h>
-#include <freertos/task.h>
-#include <freertos/semphr.h>
-
 // Project Headers
 #include "FillLevelMonitor.hpp"
 #include "ProximityLidController.hpp"
 #include "SmartSortEngine.hpp"
-
+#include "config.hpp"
 
 void setup() {
-  // lid.begin();
+  PLCInit();
   // sorter.begin();
   FLMInit();
   Serial.begin(119500);
@@ -18,12 +13,5 @@ void setup() {
 }
 
 void loop() {
-  // lid.update();
-  // if (lid.lidJustClosed()) {
-    // sorter.processWaste();
-    // binLevel.checkLevel();
-  // }
+  senseProximity();
 }
-
-// tone(buzzer, 500); if(binFull)
-// noTone(buzzer);
