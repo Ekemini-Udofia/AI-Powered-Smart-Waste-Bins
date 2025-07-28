@@ -4,9 +4,6 @@
 #include <Arduino.h>
 #include <ESP32Servo.h>
 
-Servo lidServo;
-
-
 // Define Pins
 #define BUZZER_PIN 10
 #define LID_SERVO_PIN 11

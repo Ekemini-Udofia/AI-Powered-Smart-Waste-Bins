@@ -7,6 +7,7 @@
 void setup() {
   PLCInit();
   // sorter.begin();
+  binFull();
   FLMInit();
   Serial.begin(119500);
 

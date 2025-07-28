@@ -2,6 +2,8 @@
 #include "FillLevelMonitor.hpp"
 #include "SmartSortEngine.hpp"
 
+Servo lidServo;
+
 void PLCInit() {
     pinMode(ULT_PROXIMITY_SENSOR_ECHO_PIN, INPUT);
     pinMode(ULT_PROXIMITY_SENSOR_TRIG_PIN, OUTPUT);
