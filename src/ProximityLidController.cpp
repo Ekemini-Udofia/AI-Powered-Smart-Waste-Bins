@@ -8,6 +8,14 @@ void PLCInit() {
     pinMode(BUZZER_PIN, OUTPUT);
 }
 
+static bool openLid(){
+    bool isLidClose = false;
+    // Open Lid with Servo(LID_SERVO_PIN)
+    // myservo.write(pos+160);
+    delay(1000);
+    // myservo.write(pos);
+    return isLidClose;
+}
 void senseProximity() { // Checks if someone is close and opens the lid
     // Use ULT Sensor to check the readings of ultrasonic sensor
     // Use an If condition to trigger the SmartSortEngine
@@ -34,11 +42,11 @@ void senseProximity() { // Checks if someone is close and opens the lid
             noTone(BUZZER_PIN);
         } else {
             // Open Lid and Close after 10 Seconds
+            if(openLid()){
+                Serial.println("Lid Opened");
+            }
             // Call SmartSortEngine
         }
     } 
 
 }
-
-bool closeLid();
-bool openLid();

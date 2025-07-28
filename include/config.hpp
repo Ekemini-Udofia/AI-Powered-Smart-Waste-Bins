@@ -2,6 +2,7 @@
 #define INC_CONFIG_HPP_
 
 #include <Arduino.h>
+#include <ESP32Servo.h>
 
 // Define Pins
 #define BUZZER_PIN 10
