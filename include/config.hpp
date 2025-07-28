@@ -4,6 +4,9 @@
 #include <Arduino.h>
 #include <ESP32Servo.h>
 
+Servo lidServo;
+
+
 // Define Pins
 #define BUZZER_PIN 10
 #define LID_SERVO_PIN 11
@@ -17,6 +20,8 @@
 #define TRASH_FULL_LEVEL 2 // 2cm
 #define SPEED_OF_SOUND_CM 0.034
 #define DIST_TO_OPEN_LID 10
+#define LID_SERVO_ORIGINAL_POS 0
+#define LID_SERVO_FINAL_POS 60
 
 
 #endif

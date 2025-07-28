@@ -1,20 +1,25 @@
 #include "config.hpp"
 #include "FillLevelMonitor.hpp"
+#include "SmartSortEngine.hpp"
 
 void PLCInit() {
     pinMode(ULT_PROXIMITY_SENSOR_ECHO_PIN, INPUT);
     pinMode(ULT_PROXIMITY_SENSOR_TRIG_PIN, OUTPUT);
     pinMode(LID_SERVO_PIN, OUTPUT);
     pinMode(BUZZER_PIN, OUTPUT);
+
+    ESP32PWM::allocateTimer(0);
+	ESP32PWM::allocateTimer(1);
+	ESP32PWM::allocateTimer(2);
+	ESP32PWM::allocateTimer(3);
+    lidServo.attach(LID_SERVO_PIN, 500, 2400);
+    lidServo.setPeriodHertz(50);
 }
 
-static bool openLid(){
-    bool isLidClose = false;
-    // Open Lid with Servo(LID_SERVO_PIN)
-    // myservo.write(pos+160);
-    delay(1000);
-    // myservo.write(pos);
-    return isLidClose;
+static void openLid(){
+    lidServo.write(LID_SERVO_ORIGINAL_POS);
+    delay(10); // Change this to make the bin open for longer
+    lidServo.write(LID_SERVO_FINAL_POS);
 }
 void senseProximity() { // Checks if someone is close and opens the lid
     // Use ULT Sensor to check the readings of ultrasonic sensor
@@ -42,11 +47,10 @@ void senseProximity() { // Checks if someone is close and opens the lid
             noTone(BUZZER_PIN);
         } else {
             // Open Lid and Close after 10 Seconds
-            if(openLid()){
-                Serial.println("Lid Opened");
-            }
+            openLid();
+            Serial.println("Lid Opened"); // For debugging. Delete Later
             // Call SmartSortEngine
+            SSETrigger();
         }
     } 
-
 }
