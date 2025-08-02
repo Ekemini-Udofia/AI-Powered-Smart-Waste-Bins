@@ -19,6 +19,7 @@
 #define DIST_TO_OPEN_LID 10
 #define LID_SERVO_ORIGINAL_POS 0
 #define LID_SERVO_FINAL_POS 90
+#define LID_COOLDOWN_MS 4000
 
 
 #endif

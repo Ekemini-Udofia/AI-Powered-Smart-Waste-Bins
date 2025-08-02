@@ -4,6 +4,8 @@
 
 Servo lidServo;
 
+unsigned long lastLidOpenTime = 0;
+
 void PLCInit() {
     pinMode(ULT_PROXIMITY_SENSOR_ECHO_PIN, INPUT);
     pinMode(ULT_PROXIMITY_SENSOR_TRIG_PIN, OUTPUT);
@@ -19,14 +21,20 @@ void PLCInit() {
 }
 
 static void openLid(){
+    lastLidOpenTime = millis();
     lidServo.write(LID_SERVO_ORIGINAL_POS);
-    delay(10); // Change this to make the bin open for longer
+    delay(3000); // Change this to make the bin open for longer
     lidServo.write(LID_SERVO_FINAL_POS);
 }
 void senseProximity() { // Checks if someone is close and opens the lid
     // Use ULT Sensor to check the readings of ultrasonic sensor
     // Use an If condition to trigger the SmartSortEngine
     // This function will be called in void loop(), so it will run repeatedly
+    
+    // This checks if the bin was just immediately opened, to make sure it's not opening and closing and opening again instantly
+    if(millis() - lastLidOpenTime < LID_COOLDOWN_MS) {
+      return;
+    }
 
     digitalWrite(ULT_PROXIMITY_SENSOR_TRIG_PIN, LOW);
     delayMicroseconds(2);
