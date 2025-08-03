@@ -10,7 +10,7 @@ void PLCInit() {
     pinMode(ULT_PROXIMITY_SENSOR_ECHO_PIN, INPUT);
     pinMode(ULT_PROXIMITY_SENSOR_TRIG_PIN, OUTPUT);
     pinMode(LID_SERVO_PIN, OUTPUT);
-    pinMode(BUZZER_PIN, OUTPUT);
+    // pinMode(BUZZER_PIN, OUTPUT);
 
     ESP32PWM::allocateTimer(0);
 	ESP32PWM::allocateTimer(1);
