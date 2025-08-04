@@ -21,5 +21,11 @@
 #define LID_SERVO_FINAL_POS 90
 #define LID_COOLDOWN_MS 4000
 
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+
+#define OLED_SDA 25
+#define OLED_SCL 27
+
 
 #endif

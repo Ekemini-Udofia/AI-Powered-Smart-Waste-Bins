@@ -1,6 +1,7 @@
 #include "config.hpp"
 #include "FillLevelMonitor.hpp"
 #include "SmartSortEngine.hpp"
+#include "DisplayModule.hpp"
 
 Servo lidServo;
 
@@ -62,7 +63,7 @@ void senseProximity() { // Checks if someone is close and opens the lid
         } else {
             // Open Lid and Close after 10 Seconds
             openLid();
-            Serial.println("Lid Opened"); // For debugging. Delete Later
+            printScreen("Lid Opened"); // For debugging. Delete Later
             // Call SmartSortEngine
             SSETrigger();
         }

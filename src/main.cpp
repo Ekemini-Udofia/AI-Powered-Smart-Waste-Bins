@@ -3,13 +3,15 @@
 #include "ProximityLidController.hpp"
 #include "SmartSortEngine.hpp"
 #include "config.hpp"
+#include "DisplayModule.hpp"
 
 void setup() {
+  DMInit();
   PLCInit();
   // sorter.begin();
   binFull();
   FLMInit();
-  Serial.begin(119500);
+  Serial.begin(115200);
 
 }
 
