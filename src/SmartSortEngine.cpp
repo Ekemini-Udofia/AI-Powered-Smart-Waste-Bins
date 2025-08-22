@@ -1,7 +1,7 @@
-#include "TrashModel/edge-impulse-sdk/dsp/image/image.hpp"
-#include "TrashModel/Trash_Model.h"
 #include "esp_camera.h"
 
+#include <ekeminiudofia-project-1_inferencing.h>
+#include "edge-impulse-sdk/dsp/image/image.hpp"
 
 #define CAMERA_MODEL_AI_THINKER // Has PSRAM
 
